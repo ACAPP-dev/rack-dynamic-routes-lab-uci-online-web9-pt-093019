@@ -8,12 +8,12 @@ class Application
 
     if req.path.match(/items/)
       request_item = req.path.split("/items/").last
-      if request_item == nil
-        resp.status = 400
-        resp.write "Error"
-      else
-        puts request_item
+      return_object = @@items.find {|instance_object| instant_object.name == request_item}
+      if return_object
         resp.write "#{@@items.find(name=request_item).price}"
+        if request_item == nil
+          resp.status = 400
+          resp.write "Error"
       end
     else
       resp.status = 404
