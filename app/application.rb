@@ -8,7 +8,7 @@ class Application
 
     if req.path.match(/items/)
       request_item = req.path.split("/items/").last
-      return_object = @@items.find {|instance_object| instant_object.name == request_item}
+      return_object = @@items.find {|instance_object| instance_object.name == request_item}
       if return_object
         resp.write "#{return_object.price}"
       else
