@@ -11,9 +11,9 @@ class Application
       return_object = @@items.find {|instance_object| instant_object.name == request_item}
       if return_object
         resp.write "#{return_object.price}"
-        if request_item == nil
-          resp.status = 400
-          resp.write "Error"
+      else
+        resp.status = 400
+        resp.write "Error"
       end
     else
       resp.status = 404
