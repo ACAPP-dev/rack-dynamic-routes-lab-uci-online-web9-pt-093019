@@ -11,7 +11,7 @@ class Application
         resp.status = 400
         resp.write "Error"
       else
-        #write
+        resp.write "#{request_item.price}"
       end
     else
       resp.status = 404
