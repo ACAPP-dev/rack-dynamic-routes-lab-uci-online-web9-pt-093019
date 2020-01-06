@@ -10,7 +10,6 @@ class Application
       request_item = req.path.split("/items/").last
       return_object = @@items.find {|instance_object| instance_object.name == request_item}
       if return_object
-        puts return_object.price
         resp.write "#{return_object.price}"
       else
         resp.status = 400
