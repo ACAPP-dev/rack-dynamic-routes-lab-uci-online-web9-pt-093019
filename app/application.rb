@@ -4,8 +4,8 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new
 
-    
-    if req.path.match(/items)
+
+    if req.path.match(/items/)
       request_item = req.path.split("/items/").last
       if request_item == nil
         resp.status = 400
