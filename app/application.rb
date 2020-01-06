@@ -11,7 +11,8 @@ class Application
         resp.status = 400
         resp.write "Error"
       else
-        resp.write "#{@@items.find(request_item).price}"
+        binding.pry
+        resp.write "#{@@items.find(name=request_item).price}"
       end
     else
       resp.status = 404
