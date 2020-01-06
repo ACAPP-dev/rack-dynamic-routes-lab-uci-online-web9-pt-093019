@@ -10,7 +10,7 @@ class Application
       request_item = req.path.split("/items/").last
       return_object = @@items.find {|instance_object| instant_object.name == request_item}
       if return_object
-        resp.write "#{@@items.find(name=request_item).price}"
+        resp.write "#{return_object.price}"
         if request_item == nil
           resp.status = 400
           resp.write "Error"
