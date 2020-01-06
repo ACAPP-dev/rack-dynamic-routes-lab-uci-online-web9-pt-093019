@@ -13,7 +13,7 @@ class Application
         resp.status = 400
         resp.write "Error"
       else
-        binding.pry
+        puts request_item
         resp.write "#{@@items.find(name=request_item).price}"
       end
     else
