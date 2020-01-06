@@ -14,7 +14,7 @@ class Application
         resp.write "#{return_object.price}"
       else
         resp.status = 400
-        resp.write "Error"
+        resp.write "Item not found"
       end
     else
       resp.status = 404
